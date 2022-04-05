@@ -1,8 +1,25 @@
 class VideoRecorder {
   constructor(document) {
     this.document = document;
+    if (!document) {
+      throw "No reference to document";
+    }
+
     this.preview = document.getElementById("video-recorder-preview");
+    if (!this.preview) {
+      throw "Preview Element not found";
+    }
+
     this.recording = document.getElementById("video-recorder-recording");
+    if (!this.recording) {
+      throw "Recording Element not found";
+    }
+  }
+
+  isSupported() {
+    return (
+      "mediaDevices" in navigator && "getUserMedia" in navigator.mediaDevices
+    );
   }
 
   wait(delayInMS) {
