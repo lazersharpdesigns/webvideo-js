@@ -132,4 +132,4 @@ In order to preview and display final video you need to add these id's to the vi
 
 ## Roadmap
 
-- Ability witch cameras when more than one is found
+- Ability to switch cameras when more than one is found
