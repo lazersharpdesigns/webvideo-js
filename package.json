@@ -1,0 +1,19 @@
+{
+  "name": "webvideo-js",
+  "version": "1.0.0",
+  "description": "Capture videos with device webcam from the browser",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "video",
+    "javascript",
+    "web",
+    "capture",
+    "recorder",
+    "audio"
+  ],
+  "author": "lazersharpdesigns",
+  "license": "ISC"
+}
