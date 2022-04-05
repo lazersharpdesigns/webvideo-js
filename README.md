@@ -71,6 +71,61 @@ In order to preview and display final video you need to add these id's to the vi
         </div>
     </body>
 
+    ## React Example
+    import VideoRecorder from "webvideo-js";
+    import { useCallback } from "react";
+
+    export default function App() {
+    let recorder = useCallback(() => {
+        try {
+        return new VideoRecorder(document);
+        } catch (err) {
+        console.log(err);
+        return null;
+        }
+    }, []);
+
+    const start = () => {
+        recorder().onStartButtonClicked(5000, (blob, url) => {
+        console.log(blob, url);
+        });
+    };
+
+    const stop = () => {
+        recorder().onStopButtonClicked();
+    };
+
+    return (
+        <div className="App">
+        <div className="left">
+            <div onClick={start} className="button">
+            Start Recording
+            </div>
+            <h2>Preview</h2>
+            <video
+            id="video-recorder-preview"
+            width="160"
+            height="120"
+            autoPlay
+            muted
+            ></video>
+        </div>
+        <div className="right">
+            <div onClick={stop} className="button">
+            Stop Recording
+            </div>
+            <h2>Recording</h2>
+            <video
+            id="video-recorder-recording"
+            width="160"
+            height="120"
+            controls
+            ></video>
+        </div>
+        </div>
+    );
+    }
+
 ## Authors
 
 - [@lazersharpdesigns](https://www.github.com/lazersharpdesigns)
